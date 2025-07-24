@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamie's Homepage</title>
+
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/accordion.css">
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <script defer src="scripts/bookmarks.js"></script>
+    <!-- <script defer src="scripts/personalization.js"></script> -->
+    
+    <script defer src="scripts/bootstrap.js"></script>
+</head>
+<body data-bs-theme="jamie">
+
+
+ <div class="container text-center">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-category-modal">
+             Add Category <!-- Change to manage bookmarks and categories -->
+        </button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Bookmark Modal -->
+<div class="modal fade" id="add-bookmark-modal" tabindex="-1" aria-labelledby="addBookmarkModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addBookmarkModalLabel">Add Bookmark</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <input type="text" id="site-label" placeholder="Label"> <br> <input type="url" placeholder="Site URL" id="site-url"> <br>
+        <input type="url" id="site-favicon" placeholder="Site favicon URL"> <br>
+        <select name="category" id="category-selector"></select>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="save-bookmark-button">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Category Modal -->
+<div class="modal fade" id="add-category-modal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addCategoryModalLabel">Add Category</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <input type="text" id="category-name" placeholder="Category name...">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="save-category-button" data-bs-dismiss="modal">Save and exit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
