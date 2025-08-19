@@ -1,0 +1,215 @@
+:root{
+    --uwu-font-size-lg:3rem;
+
+    --primary: #c5a4ff;
+    --primary-content: #3b00a4;
+    --primary-dark: #a471ff;
+    --primary-light: #e5d7ff;
+
+    --secondary: #ffdca4;
+    --secondary-content: #a46500;
+    --secondary-dark: #ffc871;
+    --secondary-light: #fff0d7;
+
+    --background: #efeff1;
+    --foreground: #fbfbfb;
+    --border: #dedde2;
+
+    --copy: #252329;
+    --copy-light: #645e6e;
+    --copy-lighter: #8a8495;
+
+    --success: #a4ffa4;
+    --warning: #ffffa4;
+    --error: #ffa4a4;
+    --success-content: #00a400;
+    --warning-content: #a4a400;
+    --error-content: #a40000;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+body{
+    background: var(--background);
+}
+
+button.uwu-primary {
+    text-align: center;
+    font-size: var(--uwu-font-size-lg);
+}
+
+.dark-bg {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.uwu-modal[state="hidden"]{
+    display: none;
+    
+}
+
+.uwu-modal[state="visible"]{
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    right: 20%;
+    z-index: 2;
+    width: 60%;
+    background-color: var(--primary-dark);
+    background-size: cover;
+    justify-content: center;
+    box-shadow: 0 0 5rem var(--border);
+    border: solid var(--border);
+    color: var(--primary-content);
+    
+
+}
+button{
+    border-radius: 4px;
+}
+
+.uwu-modal button{
+    background-color: var(--primary);
+    border: solid 2px var(--border);
+    color: var(--primary-content);
+}
+
+.uwu-modal button:hover{
+    background-color: var(--primary-light);
+}
+
+.uwu-modal-header{
+    display: flex;
+    justify-content: center;
+    border-bottom: solid var(--border) 2px ;
+    text-align: center;
+}
+
+.uwu-modal h2{
+    font-size: 3rem;
+    margin: 0;
+    margin-left: auto;
+    margin-top: 4px;
+}
+
+.uwu-modal .uwu-modal-header .uwu-modal-close{
+    width: 3rem;
+    background-color: var(--error-content);
+    border: solid var(--border) 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.8 128L0 115.2L51.2 64L0 12.8L12.8 0L64 51.2L115.2 0L128 12.8L76.8 64L128 115.2L115.2 128L64 76.8L12.8 128Z' fill='%23ff6666'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: center;
+    margin-left: auto;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    filter: drop-shadow(0 0 0.4rem rgba(0, 0, 0, 0.3));
+
+}
+
+.uwu-modal .uwu-modal-header .uwu-modal-close:hover{
+    background-color: var(--error);
+    border: solid var(--border) 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.8 128L0 115.2L51.2 64L0 12.8L12.8 0L64 51.2L115.2 0L128 12.8L76.8 64L128 115.2L115.2 128L64 76.8L12.8 128Z' fill='%23ff0000'/%3E%3C/svg%3E%0A");
+    background-size: 2.2rem;
+}
+
+.uwu-modal .uwu-modal-header .uwu-modal-close:active{
+    background-color: var(--copy);
+    border: solid var(--border) 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='128' height='128' viewBox='0 0 128 128' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.8 128L0 115.2L51.2 64L0 12.8L12.8 0L64 51.2L115.2 0L128 12.8L76.8 64L128 115.2L115.2 128L64 76.8L12.8 128Z' fill='%23aa0000'/%3E%3C/svg%3E%0A");
+    background-size: 2.2rem;
+}
+
+.uwu-modal .uwu-modal-content {
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.uwu-modal .uwu-modal-content button {
+    font-size: inherit;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    text-align: center;
+}
+
+.uwu-modal .uwu-modal-footer {
+    display: flex;
+    justify-content: right;
+    font-size: 2rem;
+    border-top: solid var(--border) 2px ;
+    padding: 4px;
+}
+.uwu-shelf {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.uwu-shelf[state="closed"] .uwu-shelf-body {
+    display: none;
+}
+
+.uwu-shelf[state="open"] .uwu-shelf-body {
+    display: flex;
+    background-color: var(--primary);
+    padding: 1rem;
+}
+
+.uwu-shelf-header{
+    display: flex;
+    background-color: var(--primary-light);
+    padding: 4px;
+    border: solid var(--border) 2px;
+}
+.uwu-shelf-label{
+    background: none;
+    border: none;
+}
+
+.uwu-shelf-label h2{
+    font-size: 3rem;
+    margin: 0;
+    font-weight: normal;
+}
+
+.uwu-bookmark a img{
+    min-width: 32px;
+    max-width: 64px;
+    min-height: 32px;
+    max-height: 64px;
+    background: var(--background);
+    padding: 10%;
+    border-radius: 10%;
+}
+
+.uwu-rcm[state="hidden"]{
+    display: none;
+}
+
+.uwu-rcm[state="visible"]{
+    display: block;
+}
+
+.uwu-rcm-sub {
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+    min-width: 10%;
+}
+
+.uwu-rcm-sub button {
+    font-size: 16px;
+}

@@ -1,74 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jamie's Homepage</title>
-
-    <link rel="stylesheet" href="styles/bootstrap.css">
-    <link rel="stylesheet" href="styles/accordion.css">
-    <link rel="stylesheet" href="styles/main.css">
-    
-    <script defer src="scripts/bookmarks.js"></script>
-    <!-- <script defer src="scripts/personalization.js"></script> -->
-    
-    <script defer src="scripts/bootstrap.js"></script>
-</head>
-<body data-bs-theme="jamie">
-
-
- <div class="container text-center">
-  <div class="row justify-content-md-center">
-    <div class="col-md-auto">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-category-modal">
-             Add Category <!-- Change to manage bookmarks and categories -->
-        </button>
-    </div>
-  </div>
-</div>
-
-<!-- Add Bookmark Modal -->
-<div class="modal fade" id="add-bookmark-modal" tabindex="-1" aria-labelledby="addBookmarkModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="addBookmarkModalLabel">Add Bookmark</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <link rel="stylesheet" href="styles/uwu.css">
+    <script defer src="scripts/uwu-rewrite.js"></script>
+  </head>
+  <body>
+    <div class="uwu-rcm" state="hidden">
+      <div class="uwu-rcm-sub" name="main">
+        <button class="uwu-primary" action="toggle" target="new-shelf-modal">Create a new shelf</button>
+        <button class="test1">Create a sticky note</button>
+        <button class="uwu-primary" action="toggle" target="background-modal">Change the background</button>
       </div>
-      <div class="modal-body">
-
-        <input type="text" id="site-label" placeholder="Label"> <br> <input type="url" placeholder="Site URL" id="site-url"> <br>
-        <input type="url" id="site-favicon" placeholder="Site favicon URL"> <br>
-        <select name="category" id="category-selector"></select>
-
+      <div class="uwu-rcm-sub" name="bookmark">
+        <button class="uwu-primary" >Edit</button>
+        <button class="uwu-primary" >Duplicate</button>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="save-bookmark-button">Save changes</button>
+      <div class="uwu-rcm-sub" name="shelf-header">
+        <button class="uwu-primary" action="toggle" target="add-bookmark-modal">Create a new bookmark</button>
+        <button class="uwu-primary" action="toggle" target="import-bookmarks-modal">Import bookmarks</button>
+      </div>
+      <div class="uwu-rcm-sub" name="shelf-body">
+        <button class="uwu-primary" action="toggle" target="add-bookmark-modal">Create a new bookmark</button>
+        <button class="uwu-primary" >Add cluster</button>
+
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Add Category Modal -->
-<div class="modal fade" id="add-category-modal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="addCategoryModalLabel">Add Category</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="uwu-modal" id="welcome-modal" state="hidden">
+      <div class="uwu-modal-header">
+        <h2>Welcome to UWU!</h2>
+        <button type="button" class="uwu-modal-close" target="welcome-modal" action="toggle"></button>
       </div>
-      <div class="modal-body">
-
-        <input type="text" id="category-name" placeholder="Category name...">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" id="save-category-button" data-bs-dismiss="modal">Save and exit</button>
+      <div class="uwu-modal-content"> Welcome to UWU, your personal browser homepage! Add shelves, bookmarks, notes, and your own wallpapers, all free of charge! </div>
+      <div class="uwu-modal-footer">
+        <button type="button" class="uwu-primary" target="welcome-modal" action="toggle">Close</button>
       </div>
     </div>
-  </div>
-</div>
-</body>
+
+    <div class="uwu-modal" id="new-shelf-modal" state="hidden">
+      <div class="uwu-modal-header">
+        <h2>Add a new shelf</h2>
+        <button type="button" class="uwu-modal-close" target="new-shelf-modal" action="toggle"></button>
+      </div>
+      <div class="uwu-modal-content">
+        <input type="text" class="shelf-name" required>
+        <input type="color" class="shelf-color" placeholder="#fff" required>
+        <input type="file" accept="" class="shelf-import-bookmarks">
+      </div>
+      <div class="uwu-modal-footer">
+        <button type="button" class="uwu-primary" target="new-shelf-modal" action="toggle">Cancel</button>
+        <button type="button" class="uwu-primary" target="new-shelf-modal" action="save">Save</button>
+      </div>
+    </div>
+
+    <div class="uwu-modal" id="background-modal" state="hidden">
+      <div class="uwu-modal-header">
+        <h2>Change the Background</h2>
+        <button type="button" class="uwu-modal-close" target="background-modal" action="toggle"></button>
+      </div>
+      <div class="uwu-modal-content">
+        <input type="file" accept="image/*">
+      </div>
+      <div class="uwu-modal-footer">
+        <button type="button" class="uwu-primary" target="background-modal" action="toggle">Close</button>
+      </div>
+    </div>
+
+    <div class="uwu-modal" id="add-bookmark-modal" state="hidden">
+      <div class="uwu-modal-header">
+        <h2>Add Bookmark</h2>
+        <button type="button" class="uwu-modal-close" target="add-bookmark-modal" action="toggle"></button>
+      </div>
+      <div class="uwu-modal-content">
+        <input type="text" class="label" placeholder="Bookmark label" required>
+        <input type="url" class="url" placeholder="Site URL" required>
+        <input type="text" class="category" display="none">
+
+      </div>
+      <div class="uwu-modal-footer">
+        <button type="button" class="uwu-primary" target="add-bookmark-modal" action="toggle">Cancel</button>
+        <button type="button" class="uwu-primary" target="add-bookmark-modal" action="save">Save</button>
+      </div>
+    </div>
+
+  </body>
 </html>

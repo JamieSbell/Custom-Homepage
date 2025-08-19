@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/uwu.css">
+    <script defer src="scripts/uwu.js"></script>
+</head>
+<body>
+
+    <button type="button" class="uwu-primary" target="test" action="toggle">Show Modal</button>
+
+    <div class="uwu-modal" id="test" state="hidden">
+        <div class="uwu-modal-header">
+            <h2>Modal Header</h2>
+            <button type="button" class="uwu-modal-close" target="test"></button>
+        </div>
+        <div class="uwu-modal-content">
+            Content
+            <button>test</button>
+            <button>test2</button>
+
+        </div>
+
+        <div class="uwu-modal-footer">
+            <button type="button" class="uwu-primary" target="test" action="toggle">Close</button>
+        </div>
+    </div>
+
+    <div class="uwu-shelf" state="closed" id="test-shelf">
+        <div class="uwu-shelf-header">
+                <button type="button" class="uwu-shelf-label" target="test-shelf" action="toggle">
+                    <h2>Default</h2>
+                </button>
+        </div>
+            <div class="uwu-shelf-bdy">
+                Content
+            </div>
+    </div>
+    
+</body>
+</html>
